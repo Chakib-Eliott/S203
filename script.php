@@ -4,6 +4,11 @@
     <title>Imagick</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <?php
+    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0");
+    ?>
 </head>
 <body>
     <main>
