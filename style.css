@@ -91,3 +91,19 @@ button:hover {
 .actions{
     display: inline-block;
 }
+
+/* Define styles for tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
