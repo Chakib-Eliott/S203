@@ -14,10 +14,28 @@
         </header>
         <form action="sqlrequest.php" method="post">
             <label for="pseudo">Votre pseudo :</label>
-            <input type="text" name="pseudo"/><br><br>
+            <input type="text" required id="pseudo" name="pseudo"/><br><br>
             <label for="comment">Votre commentaire :</label><br>
-            <textarea name="comment" rows="5" cols="33"> </textarea><br><br>
-            <input type="submit" value="Poster">
+            <textarea id="comment" name="comment" required rows="5" cols="33"> </textarea><br><br>
+            <input type="submit" id="submit" name="submit" value="Poster">
         </form>
+        <?php
+            if (isset($_POST['submit'], $_POST['pseudo'], $_POST['comment'])){
+                // Récupère les informations du formulaire
+                $pseudo = $_POST['pseudo'];
+                $comment = $_POST['comment'];
+                // Connection à mysql
+                $token = (bool)($connexion = mysqli_connect("localhost","s203","oui"));
+                // je verifie ma connexion
+                if($token){
+                    // Connection à la base
+                    $token2 = ($bd=mysqli_select_db($connexion,"comment"));
+                    if($token2){
+                        $req = "INSERT INTO comment (pseudo, comment) VALUES ('$pseudo', '$comment')";
+                        $req = mysqli_query($connexion,$req);
+                    }
+                }
+            }
+        ?>
     </body>
 </html>
