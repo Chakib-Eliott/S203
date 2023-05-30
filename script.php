@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <?php
-    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
-    header("Pragma: no-cache"); // HTTP 1.0.
-    header("Expires: 0");
+    // header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    // header("Pragma: no-cache"); // HTTP 1.0.
+    // header("Expires: 0");
     ?>
 </head>
 <body>
@@ -38,7 +38,7 @@
                     <form class="actions" action="uploads/<?php echo $file; ?>" method="get">
                         <button type="submit" class="download-button">Download</button>
                     </form>
-                    <form class="actions" action="delete.php" method="post">
+                    <form class="actions" action="delete.php" method="get">
                         <input type="hidden" name="file" value="<?php echo $file; ?>">
                         <button type="submit" class="delete-button">Delete</button>
                     </form>
