@@ -1,0 +1,93 @@
+/* Define variables for colors and fonts */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6a60ff;
+    --font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+
+/* Define styles for images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Define styles for form elements */
+form {
+    margin-top: 1em;
+}
+
+input[type="file"] {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.5;
+}
+
+
+/* Define styles for buttons */
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-right: 0.5em;
+}
+
+button:hover {
+    background-color: darken(#007bff, 10%);
+}
+
+button.download-button {
+    background-color: #28a745;
+}
+
+button.delete-button {
+    background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.actions{
+    display: inline-block;
+}
