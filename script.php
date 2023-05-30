@@ -21,11 +21,9 @@
                 $extension = pathinfo($file, PATHINFO_EXTENSION);
                 // get file size
                 $size = filesize('uploads/' . $file);
-                // get file creation date
-                // display file details
-            
+                
                 ?>
-                <!-- separator -->
+                <!-- display file details -->
                 <hr>
                 <p>File name: <?php echo $filename; ?></p>
                 <p>File extension: <?php echo $extension; ?></p>
