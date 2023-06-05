@@ -29,13 +29,26 @@
                 // je verifie ma connexion
                 if($token){
                     // Connection à la base
-                    $token2 = ($bd=mysqli_select_db($connexion,"comment"));
+                    $token2 = (bool)($bd = mysqli_select_db($connexion,"s203"));
                     if($token2){
                         $req = "INSERT INTO comment (pseudo, comment) VALUES ('$pseudo', '$comment')";
                         $req = mysqli_query($connexion,$req);
                     }
                 }
             }
+            $sql = "SELECT pseudo,comment,date FROM comment";
+            $res = mysqli_query($connexion,$sql);
+            echo "<table>";
+            echo "<tr><th> Pseudo </th><th> Commentaire </th><th> Date </th></tr>";
+            while($ligne = mysqli_fetch_row($res)){
+                echo "<tr>";
+                foreach($ligne as $v){
+
+                    echo "<td '>".$v."</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</table>";
         ?>
     </body>
 </html>
