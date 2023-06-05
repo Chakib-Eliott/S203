@@ -25,7 +25,7 @@
                 $pseudo = $_POST['pseudo'];
                 $comment = $_POST['comment'];
                 // Connection à mysql
-                $token = (bool)($connexion = mysqli_connect("localhost","s203","oui"));
+                $token = (bool)($connexion = mysqli_connect("localhost","root","S203"));
                 // je verifie ma connexion
                 if($token){
                     // Connection à la base
