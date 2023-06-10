@@ -7,11 +7,11 @@
         if(file_exists('uploads/' . $file)) {
             // delete file
             unlink('uploads/' . $file);
-            header('Location: script.php');
+            header('Location: ../script.php');
             exit;
         }
     }
     // if file parameter is not set or file does not exist
-    header('Location: script.php');
+    header('Location: ../script.php');
     exit;
 ?>

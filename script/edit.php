@@ -33,7 +33,7 @@ if(isset($_GET['file'])) {
             // save image
             $image->writeImage('uploads/' . $file);
             // redirect to edit.php
-            header('Location: script.php');
+            header('Location: ../script.php');
             exit;
         }
         // display image and form
@@ -43,7 +43,7 @@ if(isset($_GET['file'])) {
 <head>
     <meta charset='utf-8'>
     <title>Imagick</title>
-    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='../assets/style.css'>
 </head>
 <body>
     <main>
@@ -82,7 +82,7 @@ if(isset($_GET['file'])) {
 <?php
     }
 } else { // if file parameter is not set or file does not exist, redirect to script.php
-    header('Location: script.php');
+    header('Location: ../script.php');
     exit;
 }
 ?>

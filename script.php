@@ -3,7 +3,7 @@
 <head>
     <title>Imagick</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <?php
     header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
     header("Pragma: no-cache"); // HTTP 1.0.
@@ -14,7 +14,7 @@
     <main>
         <?php
             // list all files in 'uploads/' directory
-            $files = scandir('uploads/');
+            $files = scandir('script/uploads/');
             foreach($files as $file) {
                 // check if file is a directory
                 if(is_dir($file)) {
@@ -25,7 +25,7 @@
                 // get file extension
                 $extension = pathinfo($file, PATHINFO_EXTENSION);
                 // get file size
-                $size = filesize('uploads/' . $file);
+                $size = filesize('script/uploads/' . $file);
                 
                 ?>
                 <!-- display file details -->
@@ -33,16 +33,16 @@
                 <p>File name: <?php echo $filename; ?></p>
                 <p>File extension: <?php echo $extension; ?></p>
                 <p>File size: <?php echo $size; ?></p>
-                <p><img src="uploads/<?php echo $file; ?>" width="200"></p>
+                <p><img src="script/uploads/<?php echo $file; ?>" width="200"></p>
                 <p>
-                    <form class="actions" action="uploads/<?php echo $file; ?>" method="get">
+                    <form class="actions" action="script/uploads/<?php echo $file; ?>" method="get">
                         <button type="submit" class="download-button">Download</button>
                     </form>
-                    <form class="actions" action="delete.php" method="get">
+                    <form class="actions" action="script/delete.php" method="get">
                         <input type="hidden" name="file" value="<?php echo $file; ?>">
                         <button type="submit" class="delete-button">Delete</button>
                     </form>
-                    <form class="actions" action="edit.php" method="get">
+                    <form class="actions" action="script/edit.php" method="get">
                         <input type="hidden" name="file" value="<?php echo $file; ?>">
                         <button type="submit" class="edit-button">Edit</button>
                     </form>
@@ -51,7 +51,7 @@
             }
             ?>
                 <hr>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form action="script/upload.php" method="post" enctype="multipart/form-data">
                     Select image to upload:<br>
                     <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
                     <input type="submit" value="Upload Image" name="submit">
