@@ -6,7 +6,7 @@
         <title>Avis S203</title>
         <meta name="description" content="Page d'avis sur la SAé S203">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="asset/style.css">
+        <link rel="stylesheet" href="assets/style.css">
     </head>
     <body>
         <header>
